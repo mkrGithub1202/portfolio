@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav> 
+        <div class="logo">
+        </div><img class="logomkr" src="img/logohvid.gif" alt="scan">
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">HJEM</a></li>
+            <li><a href="ommig.html">OM MIG</a></li>
+            <li><a href="portfolio.html">PORTFOLIO</a></li>
+            <li><a href="fotografi.html">FOTOGRAFI</a></li>
+            <li><a class="active" href="kontakt.html">KONTAKT</a></li>
+
+        </ul>
+<!--- Nu laver jeg siden responssiv til en mobil enhed, dette vises når skærmen går ned i str-->
+       <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>    
+
+<!--Her starter siden-->
+
+<h3 class="overskriftkontakt">Har du spørgsmål, undren eller en efterspørgsel? <br> Så skriv til mig</h3>
+
+
+<div class="container2">
+     <form action="actionpage.php"> <!--jeg bruger php til denne kontaktformular, som er godt til dette-->
+
+         <label for="forname">Fornavn</label>
+         <input type="text" id="forname" name="fornavn" placeholder="Dit navn..">
+
+         <label for="lastname">Efternavn</label>
+         <input type="text" id="lastname" name="efternavn" placeholder="Dit efternavn..">
+
+         <label for="subejct">Emne</label>
+         <input type="text" id="subejct" name="emne" placeholder="Emne..">
+
+         <label for="message">Besked</label>
+         <textarea id="message" name="besked" placeholder="Skriv besked her..." style="height:200px;"></textarea>   <!--textareabruges til det store rum til selvebeskeden, de andre er bare små input. Setter infoen så der kun står "textarea" og giver den en class til området hvor der skal være text i, og indsætter en placeholder som de andre. Jeg sætter den til 200px så der er plads til at skrive i-->
+
+         <input type="submit" value="Send">
+
+     </form>
+</div>
+
+
+
+
+
+
+    <footer>
+        <div class="footer">
+            <p>Copyright &copy; 2020 / Mia Krogsgaard Rasmussen / All rights reserved / Powered by HTML and CSS </p>
+        </div>
+    </footer>
+    
+</body>
+</html>

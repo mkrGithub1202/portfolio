@@ -1,0 +1,363 @@
+/* GENERELT */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*alt content indenfor højde, bredde er indenfor */
+    @import url(https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;400&display=swap);
+    
+}
+
+nav{
+    display: flex; /*så bliver de ved siden af hinanden*/
+    justify-content: space-around; /*spreder dem, men stadig ved hinanden*/
+    align-items: center; /*centreres vertikalt*/
+    min-height: 8vh; /*afstand i flexboxen hvor teksten er i midten fra top til bund. Jo større tal, jo længere bliver kassen*/
+    background-color: black;
+    font-family: 'Noto Serif JP', serif;
+}
+.logo{
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: -1px; /*mellemrummet mellem bogstaverne*/
+    font-size: 50px; /*skrift størrelse*/
+}
+.logomkr{
+    width: 240px;
+    height: 50px;
+    margin-left: 1px;
+    background-position: left;
+    margin-left: -40%;
+    position: fixed;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.nav-links{
+    display: flex; /*tager dem ved siden af hinanden, på en lang linje vandret*/
+    /*background-color: grey; */
+    justify-content: space-around; /*ingenting sker her, men hvis man justerer på width, rykkes de fra hinanden*/
+    width: 35%; /*juster længden til hinanden*/
+}
+.nav-links li {
+    list-style: none; /*fjerner prikker ved unorded list*/
+}
+.nav-links a{ /*her retter jeg inde i selve de link som man kan vælge*/
+    color: white;
+    text-decoration: none; /*fjerne at de er understreget*/
+    letter-spacing: 3px;
+    font-size: 12px
+}
+.nav-links a:hover{
+    color: grey;
+}
+
+ /* Nu laver jeg menuen responssiv, så den virker til mobil*/
+ .burger{
+     display: none; /*når jeg sætter denne på, fjernes burgermenuen (skjules)*/
+}
+ .burger div{
+    width: 25px;
+    height: 3px; /*tykkelsen på stregerne ved burger menu */
+    background-color: white; 
+    margin: 5px;
+}
+.nav-links .active{ /*her fastsætter jeg en farve når man er på den side, nemmere nat navigere med*/
+    color: grey;
+}
+
+@media screen and (max-width:1024px){ /*jeg sætter den til 1024 px, her justerer jeg bare på afstanden i menuen (titlerne)*/
+    .nav-links{
+        width: 60%; /*jeg ændrer derfor width til dobbelt op af den før*/
+    }
+}
+@media screen and (max-width:768px){ /*her sætter jeg en linje for hvornår den skal gå ned i en column*/
+    body{
+        overflow-x: hidden; /*så kan man ikke scrolle mere, fastgjort skærm. x henviser til "translateX(100%)" som er nede i nav links*/
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px; /*jeg fastsætter den i højre side*/
+        height: 92vh; /*så fylder den hele skærmen*/
+        top: 8vh; /*sætter den lige under min navbar*/
+        background-color: rosybrown;
+        display: flex;
+        flex-direction: column; /*jeg bruger collum så den går vertikalt ned*/
+        align-items: center; /*palcerer teksten i midten af column*/
+        width: 50%; /*bredden på collumn, brug 50% eller fulscreen 100% el under*/
+        transform: translateX(100%) /*dette redskab bruges til at fjerne hele menu contaionern, til højre for*/
+    }
+    .nav-links li{
+        opacity: 0; /*dette fjerne skriften i menuen (gør usynelig*/
+    }
+    .burger{
+        display: block; /*taget fra hidden, til block, nu kommer de 3 streger frem*/
+        cursor: pointer; /* !! Denne gør så der kommer en aktiv musehånd over, visuelt når man vælger*/
+    }
+}
+
+/* FRONT PAGE, INDEX, HOME */
+
+.baggrundsbillede{
+   width: 1000px;
+}
+.centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    letter-spacing: 2px;
+    
+}
+.taglinefarve1{
+    color: white;
+    font-size: 35px;
+     
+}
+.taglinefarve2{
+    color: white;
+    font-size: 25px;
+    
+}
+.headermia2{
+    padding-left: 15%;
+    padding-bottom: 15%;
+    padding-right: 15%;
+    padding-top: 5%;
+}
+
+
+.footer{ 
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:white;
+    color: black;
+    text-align: center;
+}
+
+/* PORTFOLIO */
+
+.billederafxd1{
+    float: right;
+    margin-top: -15%;
+    height: 30%;
+    width: 30%;
+}
+
+
+.teskstiportfolio{
+    letter-spacing: 2px;
+    max-width: 1000px;
+    margin: auto;
+}
+.floatleft{
+    background-color: black;
+}
+.floatright{
+background-color: black;
+}
+.tekstedit{
+    color: white;
+}
+
+
+
+
+.footer{ 
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:white;
+    color: black;
+    text-align: center;
+}
+
+
+
+
+
+/* OM MIG */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Noto Serif JP', serif;
+}
+.h3iommig{
+   
+    text-align: left;
+    margin: 0;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.mainommig{
+    max-width: 1100px;
+    margin: auto;
+}
+.rowom{
+    margin: 8px -16px;
+}
+
+.rowom,
+.rowom > .columnom {
+    padding: 15px;
+}
+
+.columnom {
+    float: left;
+    width: 25%;
+  }
+  .rowom:after { /*får teksten under hvert billede*/
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.contentom {
+  background-color: white;
+  padding: 8px;
+  line-height: 180%;
+}
+.portraetmia{
+ position: relative;
+ padding-left: 30%;
+ padding-top: 0%;
+ padding-right: 30%;
+}
+.ordommig{
+    padding-left: -5%;
+    padding-right: -5%;
+    padding-top: 0%;
+    line-height: 180%;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+
+
+/*NU laver jeg den respossiv*/
+@media screen and (max-width: 900px) { /*her lavet den fra 4 til to kolonner when downsizing*/
+    .columnom {
+      width: 50%;
+    }
+  }
+
+  /*her fra 2 til 1*/
+  @media screen and (max-width: 600px) {
+    .columnom {
+      width: 100%;
+    }
+  }
+
+
+/* FOTOGRAFI */ 
+
+h3{
+    position: center;
+    margin: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}
+.rowtekst{ /*her bruger jeg flexbox*/
+    display: flex;
+    margin-right: 57px;
+    margin-left: 57px;
+    
+}
+.columntekst1{ /*tekst om foto*/
+    flex: 40%;
+    color: black;
+    padding: 60px;
+    line-height: 25px;
+    margin-top: -25px;
+    
+}
+.columntekst2{ /*liste*/
+    flex: 40%;
+    color: black;
+    padding: 60px; /*padding skaber plads omkring teksten og aligner det flot*/
+    line-height: 30px;
+    margin-top: -25px;
+    
+}
+@media screen and (max-width: 600px) { /*når skærmen er mindre end 600px bred, bliver to kolonner til 1 = responsiv  */
+    .rowtekst{
+      width: 100%;
+    }
+  }
+
+/*nu starter billederne*/
+.row{
+    display: flex;
+   margin-left: 8%;
+   margin-right: 8%;
+}
+.column{
+    flex: 33.33%; /*jeg bruger 33.33 for det er 1/3 af 100%, ellers kan man bruge  25% til 4 kolonner,  50% for 2)*/
+    padding: 10px;
+   
+}
+.columnfotoalene{ /*scan1 billede*/
+    position: absolute;
+    margin-left: 8%;
+   margin-right: 8%;
+}
+
+.footer{ 
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:white;
+    color: black;
+    text-align: center;
+}
+
+/* KONTAKT */
+
+input[type=text], textarea{
+    width: 100%; /*lader boxene går helt ud til siderne, så de droppe nedunder hinanden*/
+    padding: 12px;
+    border: 1px solid black; /*linjen rundt om boxene*/
+    border-radius: 6px; /*laver runde kanter*/
+    box-sizing: border-box; /*sørger for at padding og width bliver samme sted*/
+    margin-top: 6px;
+    margin-bottom: 20px; /*mellemrum mellem*/
+    resize: vertical; /*denne funktion "resize" er sat på så man kan gøre feltet større vertikalt (ikke horisontalt)*/  
+}
+
+input[type=submit] {
+    background-color: blue;
+    color: white;
+    padding: 12px 20px; /*højde, bredde*/
+    border: none; 
+    border-radius: 6px; /*laver runde kanter*/
+    cursor: pointer; /*laver en mussehånd, når man har musen over*/
+}
+
+.container2{
+    max-width: 800px;
+    height:600px;
+    background: rgba(99, 174, 224, 0.404) ;
+    margin: 50px auto;
+    box-sizing: border-box;
+    padding: 40px;
+    margin-top: 50px;   
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    
+
+.footer{ 
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:white;
+    color: black;
+    text-align: center;
+    font-family: 'Noto Serif JP', serif;
+}
+
